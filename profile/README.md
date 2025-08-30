@@ -4,9 +4,13 @@
 
 🔍 This application fetches top Reddit posts and uses sentiment analysis to show whether discussions are positive, negative, or neutral
 
-🛠 Developed for **Software Development Project II** at Haaga-Helia University of Applied Sciences
+🎓 Developed for **Software Development Project II** at Haaga-Helia University of Applied Sciences
 
 🚧 Currently in early development
+
+## 🛠 Tech Stack
+- **Backend:** Python & Flask
+- **Frontend:** React / Next.js & TypeScript
 
 ## 📌 User Stories
 | #  | User story | Notes | Sprint |
@@ -38,10 +42,7 @@ Based on user stories:
 - Track how opinions change over time and visualize trends
 - Filter topics by category, sentiment, or time range
 - Compare trending topics across different countries on a map
-  
-## 🛠 Tech Stack
-- **Backend:** Python & Flask
-- **Frontend:** React / Next.js & TypeScript
+
 
 
 
