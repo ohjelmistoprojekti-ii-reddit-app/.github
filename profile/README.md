@@ -9,8 +9,39 @@
 🚧 Currently in early development
 
 ## 🛠 Tech Stack
-- **Backend:** Python & Flask
-- **Frontend:** React / Next.js & TypeScript
+- **Backend:** Flask & Python
+- **Frontend:** Next.js & TypeScript
+
+## Full stack application overview
+```mermaid
+flowchart LR
+    %% Client node
+    A[**Client**] --> B[Next.js]
+
+    %% Next.js
+    subgraph B[Next.js app]
+        B1[**Routing**]
+        B2[**Client Components**]
+        B3[**Server components**]
+        B4[**Data Fetch**]
+
+        B1 --> B2
+        B1 --> B3 
+        B3 --> B4
+    end
+
+    B --> C[Flask Backend]
+
+    %% Flask
+    subgraph C[Flask backend]
+        C1[**Reddit API**<br/><br/>Async PRAW<br/>]
+        C2[**Topic Modeling**<br/><br/>Async BERTopic<br/>]
+        C3[**Sentiment analysis**<br/><br/>VADER model<br/>]
+        C4[**REST API**]
+
+        C1 --> C2 --> C3 --> C4
+    end
+```
 
 ## 📌 User Stories
 | #  | User story | Notes | Sprint |
