@@ -16,21 +16,22 @@
 ```mermaid
 flowchart LR
     %% Client node
-    A[**Client**] --> B[Next.js]
+    A[**Client**] -- Page request --> B[Next.js]
+    B[Next.js] -- Page render -->A[**Client**]
 
     %% Next.js
     subgraph B[Next.js app]
-        B1[**Routing**]
-        B2[**Client Components**]
-        B3[**Server components**]
-        B4[**Data Fetch**]
+        B1[**Route**]
+        B2[**page.tsx**]
+        B3[**Client components**]
+        B4[**Server components**]
 
-        B1 --> B2
-        B1 --> B3 
-        B3 --> B4
+        B1 <--> B2
+        B2 <--> B3
+        B2 <--> B4 
     end
 
-    B --> C[Flask Backend]
+    C[Flask Backend]
 
     %% Flask
     subgraph C[Flask backend]
@@ -38,8 +39,18 @@ flowchart LR
         C2[**Topic Modeling**<br/><br/>BERTopic<br/>]
         C3[**Sentiment analysis**<br/><br/>VADER model<br/>]
         C4[**REST API**]
+        B4<-- fetch data --> C4
+        C1 --> C2 --> C3 -- return analyzed data --> C4  
+    end
 
-        C1 --> C2 --> C3 --> C4
+    D[Sprint 2]
+
+    %% Sprint 2
+    subgraph D[TODO in Sprint 2]
+        D1[(**Database**)]
+
+        C3 -. write data .-> D1
+        D1 -. return data .-> C4
     end
 ```
 
