@@ -35,7 +35,7 @@ flowchart LR
     %% Flask
     subgraph C[Flask backend]
         C1[**Reddit API**<br/><br/>Async PRAW<br/>]
-        C2[**Topic Modeling**<br/><br/>Async BERTopic<br/>]
+        C2[**Topic Modeling**<br/><br/>BERTopic<br/>]
         C3[**Sentiment analysis**<br/><br/>VADER model<br/>]
         C4[**REST API**]
 
