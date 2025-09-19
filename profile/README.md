@@ -12,7 +12,7 @@
 - **Backend:** Flask & Python
 - **Frontend:** Next.js & TypeScript
 
-## Full stack application overview
+## 🧩 Full Stack Application Overview
 ```mermaid
 flowchart LR
     %% Client node
@@ -85,16 +85,38 @@ Based on user stories:
 - Filter topics by category, sentiment, or time range
 - Compare trending topics across different countries on a map
 
+## 👥 Team and Roles
+**The team**: [Kirsi](https://github.com/kkivilahti), [Musakhan](https://github.com/MusaMamas), [Laura](https://github.com/makinla), [Niklas](https://github.com/niklasovaska) & [Artur](https://github.com/dmas5)
+  
+Team members rotate roles and tasks each sprint to ensure a comprehensive learning experience. Currently, we have no permanent backend or frontend teams, allowing everyone to work on different tasks based on interests.
 
+Sprint-specific responsibilities are listed below.
 
+<details>
+<summary>Sprint 1</summary>
 
+| Team Member | Area     | Tasks |
+|-------------|----------|-------|
+| **Kirsi**   | Backend  | Connect to Reddit API<br>Topic modeling with BERTopic<br>Documentation |
+| **Laura**   | Backend  | Optimize Reddit API connection<br>Sentiment analysis with VADER<br>Documentation |
+| **Artur**   | Backend  | REST API with CORS configurations |
+| **Niklas**  | Frontend | Next.js app base<br>Fetch data from backend<br>Display sentiment analysis results in UI<br>Documentation |
+| **Musakhan**| Frontend | Display trending topics in UI<br>Filter topics by sentiment score<br>Error handling and loading states |
 
+</details>
 
+<details>
+<summary>Sprint 2</summary>
+Coming soon
+</details>
 
+<details>
+<summary>Sprint 3</summary>
+Coming soon
+</details>
 
-
-
-
-
-
+<details>
+<summary>Sprint 4</summary>
+Coming soon
+</details>
 
