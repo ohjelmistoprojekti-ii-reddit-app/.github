@@ -46,7 +46,7 @@ flowchart LR
     D[Sprint 2]
 
     %% Sprint 2
-    subgraph D[TODO in Sprint 2]
+    subgraph D[MongoDB]
         D1[(**Database**)]
 
         C3 -. write data .-> D1
