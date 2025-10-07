@@ -99,11 +99,11 @@ Sprint-specific responsibilities are listed below.
 
 | Team Member | Area     | Tasks |
 |-------------|----------|-------|
-| **Kirsi**   | Backend  | - Connect to Reddit API<br>- Topic modeling with BERTopic<br>- Documentation |
-| **Laura**   | Backend  | - Optimize Reddit API connection<br>- Sentiment analysis with VADER<br>- Documentation |
-| **Artur**   | Backend  | - REST API with CORS configurations |
+| **Kirsi**   | Backend  | - Connect to Reddit API and create initial fetch for selected subreddits<br>- Topic modeling with BERTopic<br>- Documentation |
+| **Laura**   | Backend  | - Optimize Reddit API connection with asyncio semaphore<br>- Sentiment analysis with VADER<br>- Documentation |
+| **Artur**   | Backend  | - Initial REST API setup with CORS configurations |
 | **Niklas**  | Frontend | - Next.js app base<br>- Fetch data from backend<br>- Display sentiment analysis results in UI<br>- Documentation |
-| **Musakhan**| Frontend | - Display trending topics in UI<br>- Filter topics by sentiment score<br>- Error handling and loading states |
+| **Musakhan**| Frontend | - Display trending topics in UI<br>- Create filtering feature for topics based on sentiment value (positive, negative, neutral)<br>- Error handling and loading states |
 
 </details>
 
@@ -112,11 +112,11 @@ Sprint-specific responsibilities are listed below.
 
 | Team Member | Area     | Tasks |
 |-------------|----------|-------|
-| **Kirsi**   | Backend  | - Automate data processing pipeline with GitHub Actions<br>- Create backend support for category filtering<br>- Process topic labels into a more readable form<br>- Documentation |
-| **Laura**   | Backend  | - Create backend support for map feature<br>- Documentation |
-| **Artur**   | Backend  | - Connect to database<br>- Plan deployment |
-| **Niklas**  | Backend<br>Frontend | - Plan how to implement over-time analysis<br>- Create backend support for over-time analysis<br>- Create map feature in frontend<br>- Display sentiment analysis results with charts in frontend<br>- Documentation |
-| **Musakhan**| Frontend | - Create filtering feature for different categories in frontend<br>- Display over-time analysis results in frontend<br>- Design and implement a stylish UI |
+| **Kirsi**   | Backend  | - Automate data processing pipeline with GitHub Actions<br>- Create backend logic for category filtering: automated analysis pipeline for 10 categories, db query and API endpoint for retrieving latest data<br>- Convert topic labels into a more readable form (basic version & LLM version)<br>- Documentation |
+| **Laura**   | Backend  | - Create backend logic for map feature: API endpoint that fetches, analyzes and translates Reddit posts<br>- Documentation |
+| **Artur**   | Backend  | - Connect to database<br>- Research options for app deployment |
+| **Niklas**  | Backend<br>Frontend | - Plan how to implement over-time analysis<br>- Create backend logic for over-time analysis: db queries that also calculate statistics for saved data & API endpoints to serve the results to frontend<br>- Create initial version of the map feature in frontend<br>- Display sentiment analysis results with charts in frontend<br>- Documentation |
+| **Musakhan**| Frontend | - Create filtering feature for different categories in frontend<br>- Display over-time analysis results with charts in frontend<br>- Design and implement a stylish and responsive UI |
 
 </details>
 
