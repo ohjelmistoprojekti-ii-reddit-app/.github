@@ -38,9 +38,11 @@ flowchart LR
         C1[**Reddit API**<br/><br/>Async PRAW<br/>]
         C2[**Topic Modeling**<br/><br/>BERTopic<br/>]
         C3[**Sentiment analysis**<br/><br/>VADER model<br/>]
-        C4[**REST API**]
-        B4<-- fetch data --> C4
-        C1 --> C2 --> C3 -- return analyzed data --> C4  
+        C4[**Translation**<br/><br/>Flan T5<br/>]
+        C5[**REST API**]
+        B4<-- fetch data --> C5
+        C1 --> C4 --> C3 -- return analyzed data --> C5
+        C1 --> C2 --> C3
     end
 
     D[Sprint 2]
@@ -50,7 +52,7 @@ flowchart LR
         D1[(**Database**)]
 
         C3 -. write data .-> D1
-        D1 -. return data .-> C4
+        D1 -. return data .-> C5
     end
 ```
 
