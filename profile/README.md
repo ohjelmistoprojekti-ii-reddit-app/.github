@@ -51,7 +51,7 @@ flowchart LR
     subgraph D[MongoDB]
         D1[(**Database**)]
 
-        C3 -. write data .-> D1
+        C3 -. GitHub Actions .-> D1
         D1 -. return data .-> C5
     end
 ```
