@@ -15,10 +15,41 @@
 ## 🧩 Full Stack Application Overview
 ```mermaid
 flowchart LR
-    %% Client node
-    A[**Client**] -- Page request --> B[Next.js]
-    B[Next.js] -- Page render -->A[**Client**]
+    %% Database
+    C1[(**MongoDB Atlas**)]
 
+    %% Connections
+    C7 <-- read/write data --> C1
+    E12 --> C1
+    E22 --> C1
+    E32 --> C1
+    E34 --> C1
+    E4 <--> C1
+
+    subgraph C[Flask backend]
+        C7[**REST API**:<br/>topics, country data, statistics, authentication, subscriptions...]
+    end
+    B4 <-- API requests --> C7
+
+    %% Automated pipelines
+    subgraph E[Automated data pipelines - GitHub Actions]
+        X[**GitHub Actions**]
+        X -- runs daily --> E1
+        X -- runs daily --> E2
+        X -- runs daily --> E3
+
+        E1[**Trending topics analysis pipeline**]
+        E2[**Country subreddit analysis pipeline**]
+        E3[**Subscription-based analysis pipeline**]
+        E4[**Inactive user check**:<br/>automatic subscription deactivation]
+
+        E1 --> E11[Fetch 500 posts from predefined subreddits] --> E12[Topic modeling, summarization, sentiment analysis]
+        E2 --> E21[Fetch 10 posts from predefined country subreddits] --> E22[Translation, sentiment analysis]
+        E3 -->|Topics analysis| E31[Fetch 500 posts from subscribed subreddits] --> E32[Topic modeling, summarization, sentiment analysis]
+        E3 -->|Posts analysis| E33[Fetch 10 posts from subscribed subreddits] --> E34[Sentiment analysis]
+        E3 --> E4
+    end
+  
     %% Next.js
     subgraph B[Next.js app]
         B1[**Route**]
@@ -31,29 +62,9 @@ flowchart LR
         B2 <--> B4 
     end
 
-    C[Flask Backend]
-
-    %% Flask
-    subgraph C[Flask backend]
-        C1[**Reddit API**<br/><br/>Async PRAW<br/>]
-        C2[**Topic Modeling**<br/><br/>BERTopic<br/>]
-        C3[**Sentiment analysis**<br/><br/>VADER model<br/>]
-        C4[**Translation**<br/><br/>Flan T5<br/>]
-        C5[**REST API**]
-        B4<-- fetch data --> C5
-        C1 --> C4 --> C3 -- return analyzed data --> C5
-        C1 --> C2 --> C3
-    end
-
-    D[Sprint 2]
-
-    %% Sprint 2
-    subgraph D[MongoDB]
-        D1[(**Database**)]
-
-        C3 -. GitHub Actions .-> D1
-        D1 -. return data .-> C5
-    end
+    %% Client node
+    A[**Client**] -- Page request --> B[Next.js]
+    B[Next.js] -- Page render -->A[**Client**]  
 ```
 
 ## 📌 User Stories
