@@ -106,7 +106,7 @@ Based on user stories:
 ## 👥 Team and Roles
 **The team**: [Kirsi](https://github.com/kkivilahti), [Musakhan](https://github.com/MusaMamas), [Laura](https://github.com/makinla), [Niklas](https://github.com/niklasovaska) & [Artur](https://github.com/dmas5)
   
-Team members rotate roles and tasks each sprint to ensure a comprehensive learning experience. Currently, we have no permanent backend or frontend teams, allowing everyone to work on different tasks based on interests.
+The team rotates roles and tasks each sprint to ensure a comprehensive learning experience. We don’t have fixed responsibilities — everyone is free to choose tasks based on their interests. Although we have no permanent backend or frontend teams, roles have formed naturally: **Kirsi, Laura, and Artur** have mainly worked on the backend, while **Musakhan and Niklas** have focused on the frontend.
 
 Sprint-specific responsibilities are listed below.
 
@@ -115,11 +115,11 @@ Sprint-specific responsibilities are listed below.
 
 | Team Member | Area     | Tasks |
 |-------------|----------|-------|
-| **Kirsi**   | Backend  | - Connect to Reddit API and create initial fetch for selected subreddits<br>- Topic modeling with BERTopic<br>- Documentation |
-| **Laura**   | Backend  | - Optimize Reddit API connection with asyncio semaphore<br>- Sentiment analysis with VADER<br>- Documentation |
-| **Artur**   | Backend  | - Initial REST API setup with CORS configurations |
-| **Niklas**  | Frontend | - Next.js app base<br>- Fetch data from backend<br>- Display sentiment analysis results in UI<br>- Documentation |
-| **Musakhan**| Frontend | - Display trending topics in UI<br>- Create filtering feature for topics based on sentiment value (positive, negative, neutral)<br>- Error handling and loading states |
+| **Kirsi**   | Backend  | - Connect to Reddit API and create initial data fetch for selected subreddits<br>- Perform topic modeling with BERTopic<br>- Documentation |
+| **Laura**   | Backend  | - Optimize Reddit API connection using asyncio semaphore<br>- Perform sentiment analysis with VADER<br>- Documentation |
+| **Artur**   | Backend  | - Set up initial REST API with CORS configurations |
+| **Niklas**  | Frontend | - Initialize Next.js app<br>- Fetch data from backend<br>- Display sentiment analysis results in UI<br>- Documentation |
+| **Musakhan**| Frontend | - Display trending topics in the UI<br>- Implement topic filtering based on sentiment values (positive, negative, neutral)<br>- Add error handling and loading states |
 
 </details>
 
@@ -128,17 +128,25 @@ Sprint-specific responsibilities are listed below.
 
 | Team Member | Area     | Tasks |
 |-------------|----------|-------|
-| **Kirsi**   | Backend  | - Automate data processing pipeline with GitHub Actions<br>- Create backend logic for category filtering: automated analysis pipeline for 10 categories, db query and API endpoint for retrieving latest data<br>- Convert topic labels into a more readable form (basic version & LLM version)<br>- Documentation |
-| **Laura**   | Backend  | - Create backend logic for map feature: API endpoint that fetches, analyzes and translates Reddit posts<br>- Documentation |
+| **Kirsi**   | Backend  | - Automate data processing with GitHub Actions<br>- Implement backend logic for category filtering: automated analysis pipeline for selected categories, database integration, and API endpoint for retrieving latest data<br>- Convert topic labels into a more readable form<br>- Documentation |
+| **Laura**   | Backend  | - Create backend logic for the map feature: language translation with Flan-T5 and a new API endpoint with real-time Reddit requests and analysis<br>- Documentation |
 | **Artur**   | Backend  | - Connect to database<br>- Research options for app deployment |
-| **Niklas**  | Backend<br>Frontend | - Plan how to implement over-time analysis<br>- Create backend logic for over-time analysis: db queries that also calculate statistics for saved data & API endpoints to serve the results to frontend<br>- Create initial version of the map feature in frontend<br>- Display sentiment analysis results with charts in frontend<br>- Documentation |
-| **Musakhan**| Frontend | - Create filtering feature for different categories in frontend<br>- Display over-time analysis results with charts in frontend<br>- Design and implement a stylish and responsive UI |
+| **Niklas**  | Backend<br>Frontend | - Plan how to implement over-time analysis<br>- Develop backend logic for over-time analysis: implement MongoDB aggregation queries to calculate statistics for stored data, and add corresponding API endpoints<br>- Create initial version of the map feature in frontend<br>- Display sentiment analysis results with charts<br>- Documentation |
+| **Musakhan**| Frontend | - Implement category filtering in frontend<br>- Display over-time analysis results with charts<br>- Design and implement a stylish and responsive UI |
 
 </details>
 
 <details>
 <summary>Sprint 3</summary>
-Coming soon
+
+| Team Member | Area     | Tasks |
+|-------------|----------|-------|
+| **Kirsi**   | Backend  | - Automate data processing and integrate database for the map feature<br>- Design and implement subreddit subscription feature in backend: automated data processing for subscribed subreddits, database integration, and API endpoints<br>- Further develop existing data pipelines<br>- Documentation |
+| **Laura**   | Backend  | - Enhance topic modeling results with representation model and topic reduction<br>- Implement topic summarization using Flan-T5<br>- Design and implement user authentication in backend: authentication API endpoints, database integration, and basic security and validation<br>- Documentation |
+| **Artur**   | Backend  | - Refactor REST API structure |
+| **Niklas**  | Frontend | - Implement subreddit subscription feature in frontend<br>- Research testing options<br>- Begin testing on the frontend side |
+| **Musakhan**| Frontend | - Update the map in frontend after backend changes<br>- Implement user authentication logic in frontend and create login/register pages<br>- Display topic summaries in the frontend |
+
 </details>
 
 <details>
