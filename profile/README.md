@@ -8,7 +8,7 @@
 
 🎓 Developed for **Software Development Project II** at Haaga-Helia University of Applied Sciences
 
-📅 **Project timeline**: August – November 2025 (4 development sprints)
+📅 **Project timeline**: August – November 2025 (4 development sprints, currently in the last one!)
 
 <br>
 
@@ -84,30 +84,29 @@ flowchart LR
 
 ## 📌 User stories
 
-✅ Done | 🟡 Partially done | 🔄 In progress | 🔜 Planned for future sprints | ❔ TBD
+✅ Done | 🟡 Partially done | 🔄 In progress | 🚫 Not planned
 
 | #  | User story | Notes | Sprint | Status |
 |----|------------|-------|--------|--------|
 | 1  | As a user, I want trending Reddit topics in one place, so that I can quickly see what’s popular. | Initial version with real-time Reddit requests and analysis (BERTopic) developed in Sprint 1. Automated data processing (via GitHub Actions) and database integration added in Sprint 2. | Sprint 1, Sprint 2 | ✅ |
 | 2  | As a user, I want to view the sentiment of public discussions (positive, negative, neutral), so that I can understand people’s opinions on a topic. | Implemented with the VADER model in Sprint 1. The same sentiment analysis approach was later reused in new features. | Sprint 1 | ✅ |
-| 3  | As a user, I want to see how opinions on a topic change over time, so I can observe how the discussion develops. | Implemented for subreddit-level in Sprint 2. Topic-level analysis planned for upcoming sprints. | Sprint 2 | 🟡 |
-| 4  | As a user, I want to search for specific topics, so that I can find opinions on topics I'm interested in. | | | ❔ |
+| 3  | As a user, I want to see how opinions on a topic change over time, so I can observe how the discussion develops. | Implemented at the subreddit level in Sprint 2. The current data processing and database architecture make topic-level implementation too difficult, so it is no longer planned. | Sprint 2 | 🟡 |
+| 4  | As a user, I want to search for specific topics, so that I can find opinions on topics I'm interested in. | Excluded due to architectural constraints — the backend runs scheduled analyses instead of real-time queries, which makes search impractical. | | 🚫 |
 | 5  | As a user, I want to save topics to my account, so that I can follow them and get updates easily. | Added user authentication and subreddit subscription feature with daily automated analyses (via GitHub Actions). | Sprint 3 | ✅ |
-| 6  | As a user, I want to receive a weekly summary of my saved topics (via email, for example), so that I can stay updated easily. | | | ❔ |
+| 6  | As a user, I want to receive a weekly summary of my saved topics (via email, for example), so that I can stay updated easily. | Not planned due to limited remaining time and the feature’s large implementation scope. | | 🚫 |
 | 7  | As a user, I want to see trending topics displayed on a map, so that I can compare public discussion in different countries. | Initial version with real-time Reddit requests implemented in Sprint 2. Automated data processing (via GitHub Actions) and database integration added in Sprint 3. | Sprint 2, Sprint 3 | ✅ |
-| 8  | As a user, I want to view results from multiple sentiment analysis models, so that I can evaluate their accuracy and reliability. | | | 🔜 |
-| 9  | As a user, I want to receive notifications when a topic I follow starts trending again, so that I don’t miss important updates. | | | ❔ |
+| 8  | As a user, I want to view results from multiple sentiment analysis models, so that I can evaluate their accuracy and reliability. | | Sprint 4 | 🔄 |
+| 9  | As a user, I want to receive notifications when a topic I follow starts trending again, so that I don’t miss important updates. | Not planned due to limited remaining time and the feature’s large implementation scope. | | 🚫 |
 | 10 | As a user, I want to filter trending topics by category (e.g., politics, technology, sports), so that I can focus on areas that interest me most. | Category = subreddit. User can view analysis results from a predefined list of subreddits. | Sprint 2 | ✅ |
-| 11 | As a user, I want to filter trending topics by time (e.g. 24 hours, 2 days, 7 days), so that I can get accurate data on the timespan I'm interested in. | | | ❔ |
-| 12 | As a user, I want to see a graph of the amount of posts over time per topic, so I can quickly explore the topic's lifecycle in popularity. | Kind of included in user story 3, extra/optional? | | ❔ |
-| 13 | As a user, I want to get a short text summary explaining why a given topic is trending, so I can understand the context better and stay up-to-date with popular topics. | Added topic summaries (with Flan-T5) to explain discussion context, though it doesn’t explicitly explain 'why' the topic is trending. | Sprint 3 | ✅ |
-| 14 | As a user, I want to be able to restrict the visibility of results so that I don't see topics that I find boring. | | | ❔ |
+| 11 | As a user, I want to filter trending topics by time (e.g. 24 hours, 2 days, 7 days), so that I can get accurate data on the timespan I'm interested in. | Excluded due to architectural constraints — the current database structure and data retrieval logic do not support time-based filtering efficiently. Also, the feature would require large updates to frontend. | | 🚫 |
+| 12 | As a user, I want to see a graph of the amount of posts over time per topic, so I can quickly explore the topic's lifecycle in popularity. | Partially implemented as part of user story 3, but only at the subreddit level, not the topic level. | Sprint 2 | 🟡 |
+| 13 | As a user, I want to get a short text summary explaining why a given topic is trending, so I can understand the context better and stay up-to-date with popular topics. | Added topic summaries (with Flan-T5) to explain discussion context, though it doesn’t explicitly explain *why* the topic is trending. | Sprint 3 | ✅ |
+| 14 | As a user, I want to be able to restrict the visibility of results so that I don't see topics that I find boring. | Excluded as unnecessary, since the user can already filter categories in the frontend and simply choose not to view uninteresting topics. | | 🚫 |
 | 15 | As a user, I want to be able to filter the visible topics by their sentiment score so that I see positive, negative or neutral topics only. | | Sprint 1 | ✅ |
-| 16 | As a user, I want to use the website also with my phone so that I can access content anytime and anywhere. | | | 🔜 |
-| 17 | As a user, I want the site to have a responsive, modern and stylish design, so that my user experience is smooth and enjoyable. | Initial version in Sprint 2, will be refined in upcoming sprints | Sprint 2 | 🟡 |
-| 18 | As a user, I want to see a clear description of how the data is processed and analysed, so that I can better understand and trust the results. | | | 🔜 |
+| 16 | As a user, I want to use the website also with my phone so that I can access content anytime and anywhere. | | Sprint 4 | 🔄 |
+| 17 | As a user, I want the site to have a responsive, modern and stylish design, so that my user experience is smooth and enjoyable. | Initial version in Sprint 2, small enhancements planned for Sprint 4 | Sprint 2, Sprint 4 | 🟡🔄 |
+| 18 | As a user, I want to see a clear description of how the data is processed and analysed, so that I can better understand and trust the results. | | Sprint 4 | 🔄 |
 | 19 | As a developer, I want to perform testing, so that I can ensure the quality of my product. | Started in Sprint 3, and continues in Sprint 4 | Sprint 3, Sprint 4 | 🟡🔄 |
-
 
 ## 📈 Planned features
 Based on user stories:
