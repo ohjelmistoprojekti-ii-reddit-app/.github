@@ -2,17 +2,32 @@
 
 🔥 **No more endless scrolling** – discover what’s trending online and how people feel about it, at a glance
 
-🔍 This application fetches top Reddit posts and uses sentiment analysis to show whether discussions are positive, negative, or neutral
+🔍 **Reddit Trend Analyzer** automatically collects and analyzes popular posts from multiple subreddits. Using **topic modeling**, **summarization**, and **sentiment analysis**, it reveals what people are discussing, their opinions, and how conversations evolve over time.
+
+💡 Analyses run daily via **GitHub Actions**, with processed insights stored in **MongoDB Atlas**
 
 🎓 Developed for **Software Development Project II** at Haaga-Helia University of Applied Sciences
 
-🚧 Currently in early development
+📅 **Project timeline**: August – November 2025 (4 development sprints)
 
-## 🛠 Tech Stack
+<br>
+
+<details open>
+<summary><strong>Table of contents</strong></summary>
+    
+- [Tech stack](#-tech-stack)
+- [Full stack application overview](#-full-stack-application-overview)
+- [User stories](#-user-stories)
+- [Planned features](#-planned-features)
+- [Team and roles](#-team-and-roles)
+
+</details>
+
+## 🛠 Tech stack
 - **Backend:** Flask & Python
 - **Frontend:** Next.js & TypeScript
 
-## 🧩 Full Stack Application Overview
+## 🧩 Full stack application overview
 ```mermaid
 flowchart LR
     %% Database
@@ -67,7 +82,7 @@ flowchart LR
     B[Next.js] -- Page render -->A[**Client**]  
 ```
 
-## 📌 User Stories
+## 📌 User stories
 
 ✅ Done | 🟡 Partially done | 🔄 In progress | 🔜 Planned for future sprints | ❔ TBD
 
@@ -94,7 +109,7 @@ flowchart LR
 | 19 | As a developer, I want to perform testing, so that I can ensure the quality of my product. | Started in Sprint 3, and continues in Sprint 4 | Sprint 3, Sprint 4 | 🟡🔄 |
 
 
-## 📈 Planned Features
+## 📈 Planned features
 Based on user stories:
 - View top trending Reddit topics on a single page
 - Analyze the sentiment of discussions (positive, negative, neutral)
@@ -103,7 +118,7 @@ Based on user stories:
 - Compare trending topics and discussions across different countries on a map
 - Log in and follow topics of interest to receive updates easily
 
-## 👥 Team and Roles
+## 👥 Team and roles
 **The team**: [Kirsi](https://github.com/kkivilahti), [Musakhan](https://github.com/MusaMamas), [Laura](https://github.com/makinla), [Niklas](https://github.com/niklasovaska) & [Artur](https://github.com/dmas5)
   
 The team rotates roles and tasks each sprint to ensure a comprehensive learning experience. We don’t have fixed responsibilities — everyone is free to choose tasks based on their interests. Although we have no permanent backend or frontend teams, roles have formed naturally: **Kirsi, Laura, and Artur** have mainly worked on the backend, while **Musakhan and Niklas** have focused on the frontend.
