@@ -30,57 +30,40 @@
 ## 🧩 Full stack application overview
 ```mermaid
 flowchart LR
-    %% Database
-    C1[(**MongoDB Atlas**)]
+    %% Client
+    A[**Client / Browser**] -- Page request --> B1
+    B1 -- Page render --> A  
 
-    %% Connections
-    C7 <-- read/write data --> C1
-    E12 --> C1
-    E22 --> C1
-    E32 --> C1
-    E34 --> C1
-    E4 <--> C1
+    %% Frontend
+    subgraph B[Next.js frontend]
+        B1[**Frontend components**]
+    end
 
+    B1 <-- API requests --> C1
+
+    %% Backend
     subgraph C[Flask backend]
-        C7[**REST API**:<br/>topics, country data, statistics, authentication, subscriptions...]
-    end
-    B4 <-- API requests --> C7
-
-    %% Automated pipelines
-    subgraph E[Automated data pipelines - GitHub Actions]
-        X[**GitHub Actions**]
-        X -- runs daily --> E1
-        X -- runs daily --> E2
-        X -- runs daily --> E3
-
-        E1[**Trending topics analysis pipeline**]
-        E2[**Country subreddit analysis pipeline**]
-        E3[**Subscription-based analysis pipeline**]
-        E4[**Inactive user check**:<br/>automatic subscription deactivation]
-
-        E1 --> E11[Fetch 500 posts from predefined subreddits] --> E12[Topic modeling, summarization, sentiment analysis]
-        E2 --> E21[Fetch 10 posts from predefined country subreddits] --> E22[Translation, sentiment analysis]
-        E3 -->|Topics analysis| E31[Fetch 500 posts from subscribed subreddits] --> E32[Topic modeling, summarization, sentiment analysis]
-        E3 -->|Posts analysis| E33[Fetch 10 posts from subscribed subreddits] --> E34[Sentiment analysis]
-        E3 --> E4
-    end
-  
-    %% Next.js
-    subgraph B[Next.js app]
-        B1[**Route**]
-        B2[**page.tsx**]
-        B3[**Client components**]
-        B4[**Server components**]
-
-        B1 <--> B2
-        B2 <--> B3
-        B2 <--> B4 
+        C1[**REST API**:<br/>topics, country data,<br/>statistics, authentication,<br/>subscriptions...]
     end
 
-    %% Client node
-    A[**Client**] -- Page request --> B[Next.js]
-    B[Next.js] -- Page render -->A[**Client**]  
+    C1 <-- read/write data --> D1
+
+    %% Database
+    subgraph D[Database]
+        D1[(**MongoDB Atlas**)]
+    end
+
+    %% GitHub Actions
+    subgraph E[Automated data pipelines]
+        E1[**GitHub Actions trigger**]
+        E2[**Fetch data from Reddit API**]
+        E3[**Process data:**<br/>e.g. topic modeling,<br/>sentiment analysis]
+
+        E1 --> E2 --> E3 -- store results --> D1
+    end
 ```
+
+For more detailed architecture charts, see backend and frontend repositories.
 
 ## 📌 User stories
 
