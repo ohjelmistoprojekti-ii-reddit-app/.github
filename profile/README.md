@@ -4,7 +4,7 @@
 
 🔍 **Reddit Trend Analyzer** automatically collects and analyzes popular posts from multiple subreddits. Using **topic modeling**, **summarization**, and **sentiment analysis**, it reveals what people are discussing, their opinions, and how conversations evolve over time.
 
-💡 Analyses run daily via **GitHub Actions**, with processed insights stored in **MongoDB Atlas**
+💡 Analyses run via **GitHub Actions**, with processed insights stored in **MongoDB Atlas**
 
 🎓 Developed for **Software Development Project II** at Haaga-Helia University of Applied Sciences
 
@@ -17,9 +17,10 @@
     
 - [Tech stack](#-tech-stack)
 - [Full stack application overview](#-full-stack-application-overview)
+- [Main features](#-main-features)
 - [User stories](#-user-stories)
-- [Planned features](#-planned-features)
 - [Team and roles](#-team-and-roles)
+- [Contributing](#-contributing)
 
 </details>
 
@@ -65,9 +66,18 @@ flowchart LR
 
 For more detailed architecture charts, see backend and frontend repositories.
 
+## ⭐ Main features
+
+- Discover trending topics across multiple categories (news, tech, entertainment…)
+- View the sentiment of discussions (positive, negative, neutral)
+- Track how trends change over time with interactive charts
+- Filter topics by category or sentiment
+- Explore discussion trends across different countries on a map
+- Log in and subscribe to get automated analyses for your favorite subreddit
+
 ## 📌 User stories
 
-✅ Done | 🟡 Partially done | 🔄 In progress | 🚫 Not planned | ❌ Dropped
+✅ Done | 🟡 Partially done | 🔄 In progress | 🚫 Not planned | 💡 Development idea
 
 | #  | User story | Notes | Sprint | Status |
 |----|------------|-------|--------|--------|
@@ -76,10 +86,10 @@ For more detailed architecture charts, see backend and frontend repositories.
 | 3  | As a user, I want to see how opinions on a topic change over time, so I can observe how the discussion develops. | Implemented at the subreddit level in Sprint 2. The current data processing and database architecture make topic-level implementation too difficult, so it is no longer planned. | Sprint 2 | 🟡 |
 | 4  | As a user, I want to search for specific topics, so that I can find opinions on topics I'm interested in. | Excluded due to architectural constraints — the backend runs scheduled analyses instead of real-time queries, which makes search impractical. | | 🚫 |
 | 5  | As a user, I want to save topics to my account, so that I can follow them and get updates easily. | Added user authentication and subreddit subscription feature with daily automated analyses (via GitHub Actions). | Sprint 3 | ✅ |
-| 6  | As a user, I want to receive a weekly summary of my saved topics (via email, for example), so that I can stay updated easily. | Not planned due to limited remaining time and the feature’s large implementation scope. | | 🚫 |
+| 6  | As a user, I want to receive a weekly summary of my saved topics (via email, for example), so that I can stay updated easily. | Not implemented due to time constraints. Possible idea for future development. | | 💡 |
 | 7  | As a user, I want to see trending topics displayed on a map, so that I can compare public discussion in different countries. | Initial version with real-time Reddit requests implemented in Sprint 2. Automated data processing (via GitHub Actions) and database integration added in Sprint 3. | Sprint 2, Sprint 3 | ✅ |
-| 8  | As a user, I want to view results from multiple sentiment analysis models, so that I can evaluate their accuracy and reliability. | Planned for Sprint 4, but not implemented due to time constraints. | Sprint 4 | ❌ |
-| 9  | As a user, I want to receive notifications when a topic I follow starts trending again, so that I don’t miss important updates. | Not planned due to limited remaining time and the feature’s large implementation scope. | | 🚫 |
+| 8  | As a user, I want to view results from multiple sentiment analysis models, so that I can evaluate their accuracy and reliability. | Not implemented due to time constraints. Great idea for future development. | | 💡 |
+| 9  | As a user, I want to receive notifications when a topic I follow starts trending again, so that I don’t miss important updates. | Not implemented due to time constraints. Possible idea for future development. | | 💡 |
 | 10 | As a user, I want to filter trending topics by category (e.g., politics, technology, sports), so that I can focus on areas that interest me most. | Category = subreddit. User can view analysis results from a predefined list of subreddits. | Sprint 2 | ✅ |
 | 11 | As a user, I want to filter trending topics by time (e.g. 24 hours, 2 days, 7 days), so that I can get accurate data on the timespan I'm interested in. | Excluded due to architectural constraints — the current database structure and data retrieval logic do not support time-based filtering efficiently. Also, the feature would require large updates to frontend. | | 🚫 |
 | 12 | As a user, I want to see a graph of the amount of posts over time per topic, so I can quickly explore the topic's lifecycle in popularity. | Partially implemented as part of user story 3, but only at the subreddit level, not the topic level. | Sprint 2 | 🟡 |
@@ -88,24 +98,15 @@ For more detailed architecture charts, see backend and frontend repositories.
 | 15 | As a user, I want to be able to filter the visible topics by their sentiment score so that I see positive, negative or neutral topics only. | Added filtering by sentiment score. | Sprint 1 | ✅ |
 | 16 | As a user, I want to use the website also with my phone so that I can access content anytime and anywhere. | Responsive layout improved in Sprint 4, with minor issues potentially remaining. | Sprint 4 | ✅ |
 | 17 | As a user, I want the site to have a responsive, modern and stylish design, so that my user experience is smooth and enjoyable. | Initial version in Sprint 2, and small enhancements added in Sprint 4. | Sprint 2, Sprint 4 | ✅ |
-| 18 | As a user, I want to see a clear description of how the data is processed and analysed, so that I can better understand and trust the results. | Planned for Sprint 4, but not implemented due to time constraints. | Sprint 4 | ❌ |
-| 19 | As a developer, I want to perform testing, so that I can ensure the quality of my product. | Some tests were implemented in both backend and frontend, but the coverage is not comprehensive. If the project would continue, expanding the testing scope is recommended. | Sprint 3, Sprint 4 | 🟡 |
-
-## 📈 Planned features
-Based on user stories:
-- View top trending Reddit topics on a single page
-- Analyze the sentiment of discussions (positive, negative, neutral)
-- Track how opinions change over time and visualize trends
-- Filter topics by category, sentiment, or time range
-- Compare trending topics and discussions across different countries on a map
-- Log in and follow topics of interest to receive updates easily
+| 18 | As a user, I want to see a clear description of how the data is processed and analysed, so that I can better understand and trust the results. | Not implemented due to time constraints. Great idea for future development. | | 💡 |
+| 19 | As a developer, I want to perform testing, so that I can ensure the quality of my product. | Some tests were implemented in both backend and frontend, but the coverage is not comprehensive. If the project would continue, expanding the testing scope is recommended. | Sprint 3, Sprint 4 | 🟡💡 |
 
 ## 👥 Team and roles
 **The team**: [Kirsi](https://github.com/kkivilahti), [Musakhan](https://github.com/MusaMamas), [Laura](https://github.com/makinla), [Niklas](https://github.com/niklasovaska) & [Artur](https://github.com/dmas5)
   
-The team rotates roles and tasks each sprint to ensure a comprehensive learning experience. We don’t have fixed responsibilities — everyone is free to choose tasks based on their interests. Although we have no permanent backend or frontend teams, roles have formed naturally: **Kirsi, Laura, and Artur** have mainly worked on the backend, while **Musakhan and Niklas** have focused on the frontend.
+This project was carried out as part of the **Software Development Project II** course at Haaga-Helia University of Applied Sciences by a 5-member team. The team had no fixed responsibilities and everyone was allowed to choose tasks according to their interests. While there were no permanent backend or frontend teams, roles naturally emerged: **Kirsi, Laura, and Artur** primarily worked on the backend, whereas **Musakhan and Niklas** focused on the frontend.
 
-Sprint-specific responsibilities are listed below.
+Sprint-specific responsibilities were as follows:
 
 <details>
 <summary>Sprint 1</summary>
@@ -151,11 +152,23 @@ Sprint-specific responsibilities are listed below.
     
 | Team Member | Area     | Tasks |
 |-------------|----------|-------|
-| **Kirsi**   | Backend  | - Implement backend testing using Pytest<br>- Automate test execution and Allure test report generation/publishing with GitHub Actions<br>- Documentation |
+| **Kirsi**   | Backend  | - Implement backend testing using Pytest<br>- Automate test execution and Allure test report generation/publishing with GitHub Actions<br>- Add licenses<br>- Documentation |
 | **Laura**   | Backend  | - Deploy backend on Render<br>- Finalize user authentication feature in backend<br>- Review application security<br>- Documentation |
-| **Artur**   | Backend  | - Research license options |
-| **Niklas**  | Frontend | - Deploy frontend on Vercel<br>- Finalize subscription feature in frontend<br>- Add frontend tests<br>- Documentation |
+| **Artur**   | Backend  | - Research license options<br>- Research database schemas |
+| **Niklas**  | Frontend | - Deploy frontend on Vercel<br>- Finalize subscription feature in frontend<br>- Implement frontend testing using mainly Playwright<br>- Documentation |
 | **Musakhan**| Frontend | - Finalize UI and improve responsiveness<br>- Improve user authentication handling in frontend |
 
 </details>
+
+## 🤝 Contributing
+
+This project is released under the Apache 2.0 License.  
+
+We welcome community contributions! You can:
+
+1. **Fork** this repository to create your own version  
+2. **Experiment** with new features or improvements  
+3. **Share** your ideas with the community  
+
+⚠️ Please note: the main repository is kept stable. Pull requests will be reviewed carefully, so for most changes, forking is recommended.
 
