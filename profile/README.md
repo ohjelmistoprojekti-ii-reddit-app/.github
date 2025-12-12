@@ -164,11 +164,6 @@ Sprint-specific responsibilities were as follows:
 
 This project is released under the Apache 2.0 License.  
 
-We welcome community contributions! You can:
+You are welcome to **fork** this repository and build upon it freely. 
 
-1. **Fork** this repository to create your own version  
-2. **Experiment** with new features or improvements  
-3. **Share** your ideas with the community  
-
-⚠️ Please note: the main repository is kept stable. Pull requests will be reviewed carefully, so for most changes, forking is recommended.
-
+If you have any questions about licensing, usage, or anything else, feel free to open an issue in any of the repositories.
